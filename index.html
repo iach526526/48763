@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leopard@^1/dist/index.min.css"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="greenFlag" style="display: none;"></button>
+    <div id="project"></div>
+
+    <script type="module">
+      import project from "./index.js";
+
+      project.attach("#project");
+
+      document.querySelector("#greenFlag").addEventListener("click", () => {
+        project.greenFlag();
+      });
+
+      // Autoplay
+      project.greenFlag();
+    </script>
+  </body>
+</html>
